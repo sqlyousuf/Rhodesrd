@@ -5,6 +5,24 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const STORAGE_KEY = 'expenses';
 
+const initialExpenses = [
+  { id: '1', work: 'Fence Metal', amount: 8600 },
+  { id: '2', work: 'Fence Transport', amount: 250 },
+  { id: '3', work: 'Fence Post Material Wood', amount: 5283 },
+  { id: '4', work: 'Fence Screws', amount: 700 },
+  { id: '5', work: 'Dumpsters', amount: 2400 },
+  { id: '6', work: 'Material', amount: 270 },
+  { id: '7', work: 'Roof Material', amount: 9360 },
+  { id: '8', work: 'Roofer', amount: 5800 },
+  { id: '9', work: 'Septic Cleaner/ Fixer', amount: 2500 },
+  { id: '10', work: 'Survey', amount: 350 },
+  { id: '11', work: 'Tree Cleanup', amount: 5900 },
+  { id: '12', work: 'Waterwell', amount: 2865 },
+  { id: '13', work: 'Gate Welder', amount: 400 },
+  { id: '14', work: 'Labor Jesus', amount: 4000 },
+  { id: '15', work: 'HVAC', amount: 10750 },
+];
+
 export default function App() {
   const [expenses, setExpenses] = useState([]);
   const [total, setTotal] = useState(0);
@@ -27,6 +45,8 @@ export default function App() {
       const stored = await AsyncStorage.getItem(STORAGE_KEY);
       if (stored) {
         setExpenses(JSON.parse(stored));
+      } else {
+        setExpenses(initialExpenses);
       }
     } catch (e) {
       console.error(e);
