@@ -172,6 +172,7 @@ const styles = StyleSheet.create({
   },
   total: {
     fontSize: 20,
+    fontWeight: '900',
     textAlign: 'center',
     marginBottom: 22,
     color: '#2d1f0f',
