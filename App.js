@@ -93,7 +93,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Rhodes Rd Expenses</Text>
+      <Text style={styles.title}>Rhodes Rd</Text>
       <Text style={styles.total}>Total: ${total.toFixed(2)}</Text>
       <FlatList
         data={expenses}
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 10,
